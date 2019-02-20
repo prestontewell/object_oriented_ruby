@@ -35,6 +35,14 @@ class Manager < Employee
     end                               # which if I understand correctly, works because it's inherited from the 
   end                                 # super command? order? thing?
 
+  def fire_all_employees
+    @employees.each do |employees|
+      employees.active = false
+      p active
+    end
+  end
+  
+
   def send_report
     puts "Sending email..."
     # use email sending library...
@@ -43,11 +51,13 @@ class Manager < Employee
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
-manager.print_info
+# manager.print_info
 # manager.send_report
 employee1.print_info
 employee2.print_info
 p "-----------------------------------"
-manager.gives_all_raises
-employee1.print_info
-employee2.print_info
+# manager.gives_all_raises
+manager.fire_all_employees
+p employee1.active
+p employee2.active
+p manager.active
