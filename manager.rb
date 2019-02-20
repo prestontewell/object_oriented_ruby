@@ -35,8 +35,8 @@ class Manager < Employee
     end                               # which if I understand correctly, works because it's inherited from the 
   end                                 # super command? order? thing?
 
-  def fire_all_employees
-    @employees.each do |employees|
+  def fire_all_employees              # make sure to call the right variable. initially called @active, which just
+    @employees.each do |employees|    # referred back to the manager. have to call the employees variable
       employees.active = false
       p active
     end
