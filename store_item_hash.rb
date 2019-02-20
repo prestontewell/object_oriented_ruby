@@ -10,13 +10,19 @@ class EnergyDrink
     @name = input_options[:name]
     @cost = input_options[:cost]
   end  
-end
 
-  # def print_info
-  #   p "#{size} "
+  # def get_info
+  #   "#{name} is #{size}"
   # end
 
-energydrink1 = EnergyDrink.new(input_size: 16, flavor: "Grape", name: "nausea", cost: 2.35)
+  def drink_info
+     "#{name} is a #{flavor.downcase} flavored energy drink sold in #{size} ounce cans for $#{cost}."
+  end
+
+end
+
+
+energydrink1 = EnergyDrink.new(size: 16, flavor: "Grape", name: "nausea", cost: 2.35)
 
 energydrink2 = EnergyDrink.new(
 
@@ -24,10 +30,25 @@ energydrink2 = EnergyDrink.new(
     :size => 24, 
     :flavor => "Avocado",
     :name => "hurl",
-    :cost => "3.25",
+    :cost => 3.25,
   }
 
   )
 
-p energydrink1.flavor
-p energydrink2
+# energy_drink_3 = {:size => 16, :flavor => "Rice Cake", :name => "bone dry", :cost => 2.35}
+
+energy_drink_3 = EnergyDrink.new(
+
+  {
+    :size => 16,
+    :flavor => "Rice Cake",
+    :name => "bone dry",
+    :cost => 2.35
+  }
+
+  )
+
+
+p energydrink1.drink_info
+# p energydrink1.flavor
+# p energydrink2
