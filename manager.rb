@@ -19,7 +19,7 @@ class Employee
 end
 
 employee1 = Employee.new({first_name: "Majora", last_name: "Carter", salary: 80000, active: true})
-employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true)
+employee2 = Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: false)
 # employee1.print_info
 # employee2.print_info
 
@@ -37,7 +37,9 @@ class Manager < Employee
 
   def fire_all_employees              # make sure to call the right variable. initially called @active, which just
     @employees.each do |employees|    # referred back to the manager. have to call the employees variable
-      employees.active = false
+      if employees.active == true
+          employees.active = false
+      end
       p active
     end
   end
@@ -60,6 +62,6 @@ manager.gives_all_raises
 employee1.print_info
 employee2.print_info
 # manager.fire_all_employees
-# p employee1.active
-# p employee2.active
+p employee1.active
+p employee2.active
 # p manager.active

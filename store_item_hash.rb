@@ -16,10 +16,14 @@ class EnergyDrink
   # end
 
   def drink_info
-     "#{name} is a #{flavor.downcase} flavored energy drink sold in #{size} ounce cans for $#{cost}."
+     "#{name} is a #{flavor.downcase} flavored, brain-punching energy drink sold in #{size} ounce cans for $#{cost}."
   end
-
 end
+
+
+class Food
+
+
 
 
 energydrink1 = EnergyDrink.new(size: 16, flavor: "Grape", name: "nausea", cost: 2.35)
