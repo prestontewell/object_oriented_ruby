@@ -10,7 +10,7 @@ class Employee
   end
 
   def print_info
-    puts "#{@first_name} #{@last_name} makes #{@salary} a year."
+    puts "#{@first_name} #{@last_name} makes #{@salary.to_i} a year."
   end
 
   def give_annual_raise
@@ -56,8 +56,10 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 employee1.print_info
 employee2.print_info
 p "-----------------------------------"
-# manager.gives_all_raises
-manager.fire_all_employees
-p employee1.active
-p employee2.active
-p manager.active
+manager.gives_all_raises
+employee1.print_info
+employee2.print_info
+# manager.fire_all_employees
+# p employee1.active
+# p employee2.active
+# p manager.active
